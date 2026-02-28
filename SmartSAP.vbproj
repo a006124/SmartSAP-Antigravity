@@ -4,24 +4,65 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
     <RootNamespace>SmartSAP</RootNamespace>
+    <AssemblyName>SmartSAP</AssemblyName>
     <UseWPF>true</UseWPF>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
 
+  <!-- XAML Views -->
   <ItemGroup>
-    <Import Include="System.Windows" />
-    <Import Include="System.Windows.Controls" />
-    <Import Include="System.Windows.Data" />
-    <Import Include="System.Windows.Documents" />
-    <Import Include="System.Windows.Input" />
-    <Import Include="System.Windows.Media" />
-    <Import Include="System.Windows.Media.Imaging" />
-    <Import Include="System.Windows.Navigation" />
-    <Import Include="System.Windows.Shapes" />
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="MainWindow.xaml.vb">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+
+    <Page Include="Views\LibraryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\LibraryView.xaml.vb">
+      <DependentUpon>LibraryView.xaml</DependentUpon>
+    </Compile>
+
+    <Page Include="Views\ModuleDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\ModuleDetailView.xaml.vb">
+      <DependentUpon>ModuleDetailView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <!-- App Resources -->
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.vb">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Resource Dictionaries -->
+  <ItemGroup>
+    <Resource Include="Themes\Colors.xaml"/>
+    <Resource Include="Themes\Styles.xaml"/>
+  </ItemGroup>
+
+  <!-- ViewModels -->
+  <ItemGroup>
+    <Compile Include="ViewModels\ViewModelBase.vb"/>
+    <Compile Include="ViewModels\RelayCommand.vb"/>
+    <Compile Include="ViewModels\MainViewModel.vb"/>
+    <Compile Include="ViewModels\LibraryViewModel.vb"/>
+    <Compile Include="ViewModels\ModuleDetailViewModel.vb"/>
   </ItemGroup>
 
   <ItemGroup>

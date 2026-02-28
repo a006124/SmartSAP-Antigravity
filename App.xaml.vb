@@ -1,3 +1,5 @@
-Class Application
-    ' Application-level logic
-End Class
+Namespace SmartSAP
+    Class App
+        ' Application-level logic
+    End Class
+End Namespace

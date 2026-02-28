@@ -12,57 +12,23 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
 
-  <!-- XAML Views -->
+  <!--
+    Le SDK auto-inclut tous les .vb et .xaml.
+    On utilise Update (pas Include) pour lier les code-behinds sans créer de doublons.
+  -->
   <ItemGroup>
-    <Page Include="MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="MainWindow.xaml.vb">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-
-    <Page Include="Views\LibraryView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Views\LibraryView.xaml.vb">
-      <DependentUpon>LibraryView.xaml</DependentUpon>
-    </Compile>
-
-    <Page Include="Views\ModuleDetailView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Views\ModuleDetailView.xaml.vb">
-      <DependentUpon>ModuleDetailView.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <!-- App Resources -->
-  <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </ApplicationDefinition>
-    <Compile Include="App.xaml.vb">
+    <Compile Update="App.xaml.vb">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <!-- Resource Dictionaries -->
-  <ItemGroup>
-    <Resource Include="Themes\Colors.xaml"/>
-    <Resource Include="Themes\Styles.xaml"/>
-  </ItemGroup>
-
-  <!-- ViewModels -->
-  <ItemGroup>
-    <Compile Include="ViewModels\ViewModelBase.vb"/>
-    <Compile Include="ViewModels\RelayCommand.vb"/>
-    <Compile Include="ViewModels\MainViewModel.vb"/>
-    <Compile Include="ViewModels\LibraryViewModel.vb"/>
-    <Compile Include="ViewModels\ModuleDetailViewModel.vb"/>
+    <Compile Update="MainWindow.xaml.vb">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LibraryView.xaml.vb">
+      <DependentUpon>LibraryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ModuleDetailView.xaml.vb">
+      <DependentUpon>ModuleDetailView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

@@ -1,7 +1,8 @@
 Imports System.Collections.ObjectModel
 Imports System.Windows.Input
 
-Namespace ViewModels
+Namespace SmartSAP.ViewModels
+    ' Namespace aligned with XAML mapping (clr-namespace:SmartSAP.ViewModels)
     Public Class LibraryViewModel
         Inherits ViewModelBase
 

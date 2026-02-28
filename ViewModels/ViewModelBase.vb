@@ -1,7 +1,8 @@
 Imports System.ComponentModel
 Imports System.Runtime.CompilerServices
 
-Namespace ViewModels
+Namespace SmartSAP.ViewModels
+    ' Namespace aligned with XAML mapping (clr-namespace:SmartSAP.ViewModels)
     Public Abstract Class ViewModelBase
         Implements INotifyPropertyChanged
 

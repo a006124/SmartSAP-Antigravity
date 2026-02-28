@@ -5,7 +5,7 @@ Namespace SmartSAP
             InitializeComponent()
 
             ' Add any initialization after the InitializeComponent() call.
-            DataContext = New ViewModels.MainViewModel()
+            DataContext = New SmartSAP.ViewModels.MainViewModel()
         End Sub
     End Class
 End Namespace

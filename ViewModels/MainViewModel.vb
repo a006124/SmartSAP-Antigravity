@@ -1,4 +1,4 @@
-Namespace ViewModels
+Namespace SmartSAP.ViewModels
     Public Class MainViewModel
         Inherits ViewModelBase
 
